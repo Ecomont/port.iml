@@ -29,19 +29,40 @@ public class Hub {
         this.hub = hub;
     }
 
-
-
-    public String getCheckedContainers(int hubNumber, double weight, Container[][] hub) {
+/*
+    //este sirve para la primera parte del ejercicio
+    public String checkWeight(int hubNumber, double weight, Container containerToCheck) {
         StringBuilder informationHub = new StringBuilder();
         for (Container container : hub[hubNumber - 1]) {
             if (container.getWeight() <= weight) {
                 container.setChecked(true);
-                informationHub.append(container.toString()).append("\n");
+                informationHub.append(container.info()).append("\n");
             }
+        }
+        if (containerToCheck != null) {
+            containerToCheck.setChecked(true);
+            informationHub.append(containerToCheck.info()).append("\n");
         }
         return informationHub.toString();
     }
 
+
+ */
+    //este metodo sirve para la segunda parte del ejercicio, Si se utiliza este
+    public String checkWeight(int hubNumber, double weight, Container container) {
+        StringBuilder informationHub = new StringBuilder();
+        if (container.getWeight() <= weight) {
+            container.setChecked(true);
+            informationHub.append(container.info()).append("\n");
+        }
+        return informationHub.toString();
+    }
+
+
+
+
+
+    //el setChecked lo he puesto en container para que marque como true inspectedByCustoms cuando sea cierto este metodo
 
 
 

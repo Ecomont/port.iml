@@ -112,6 +112,14 @@ public class Container {
                 '}';
     }
 
+    public String info(){
+        return "Container{" +
+                "identifierNumber=" + identifierNumber +
+                ", weight=" + weight +
+                ", inspectedByCustoms=" + inspectedByCustoms +
+                ", companySender='" + companySender + '\'' +
+                '}';
+    }
 
     public void setChecked(boolean inspected) {
         this.inspectedByCustoms = inspected;

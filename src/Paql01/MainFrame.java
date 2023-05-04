@@ -35,6 +35,8 @@ public class MainFrame extends JFrame{
     private JPanel mainPanel;
 
     private JTextField tfNumberHere;
+    private JTextField hubNumberTextField;
+    private JButton checkWeightButton;
 
     public JLabel getLbIDnumber() {
         return lbIDnumber;
@@ -277,6 +279,7 @@ public class MainFrame extends JFrame{
         setSize(1000, 800);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        Hub hub= new Hub();
         Hub hub1= new Hub();
         Hub hub2= new Hub();
         Hub hub3= new Hub();
@@ -406,6 +409,18 @@ public class MainFrame extends JFrame{
 
          */
 
+        checkWeightButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Container container= new Container();
+                if (e.getSource()==checkWeightButton){
+                    double weight=Double.parseDouble(tfWeight.getText());
+                    int hubNumber=Integer.parseInt(hubNumberTextField.getText());
+                    //hub.checkWeight(hubNumber, weight);
+                    JOptionPane.showInputDialog(hub.checkWeight(hubNumber, weight, container ));
+                }
+            }
+        });
     }
 
     public static void main(String[] args) {
