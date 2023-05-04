@@ -113,6 +113,11 @@ public class Container {
     }
 
 
+    public void setChecked(boolean inspected) {
+        this.inspectedByCustoms = inspected;
+    }
+
+
 
 }
 

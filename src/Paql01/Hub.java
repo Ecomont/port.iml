@@ -1,3 +1,4 @@
+//Hector Ruiz Lopez
 package Paql01;
 
 import java.util.Arrays;
@@ -27,6 +28,23 @@ public class Hub {
     public void setHub(Container[][] hub) {
         this.hub = hub;
     }
+
+
+
+    public String getCheckedContainers(int hubNumber, double weight, Container[][] hub) {
+        StringBuilder informationHub = new StringBuilder();
+        for (Container container : hub[hubNumber - 1]) {
+            if (container.getWeight() <= weight) {
+                container.setChecked(true);
+                informationHub.append(container.toString()).append("\n");
+            }
+        }
+        return informationHub.toString();
+    }
+
+
+
+
     public void vacio(Container container){
         if (container==null){
             container= new Container();
